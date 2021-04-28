@@ -20,7 +20,7 @@ data, meta_data = ts.get_intraday('GOOGL')
 
 ttm_data, ttm_meta_data = ts.get_intraday(symbol='GOOG', interval='1min',
                                           outputsize='compact')
-print(ttm_meta_data)
+# print(ttm_meta_data)
 
 df = ttm_data.copy()
 print(df.head())
@@ -36,7 +36,6 @@ print(df.head())
 df = pd.melt(df, id_vars=['indicator'], var_name='date', value_name='rate')
 df = df[df['indicator'] != 'volume']
 print(df[:15])
-
 
 app = dash.Dash(__name__)
 
